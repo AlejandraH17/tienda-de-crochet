@@ -1,7 +1,7 @@
 <?php
 include 'conexion.php'; // tu archivo de conexión
 $categorias = [
-  'Trajes de Baño' => ['id' => 17, 'enlace' => 'categoria_trajes.php'],
+  'Trajes de Baño' => ['id' => 17, 'enlace' => 'categoria_tdb.php'],
   'Vestidos y Conjuntos' => ['id' => 3, 'enlace' => 'categoria_vestidos.php'],
   'Escarpines' => ['id' => 5, 'enlace' => 'categoria_escarpines.php'],
   'Tops y Suéteres' => ['id' => 22, 'enlace' => 'categoria_tops.php'],
@@ -119,4 +119,5 @@ $categorias = [
     </section>
 </body>
 </html>
+
 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="estilo.css">
+<meta charset="UTF-8">
+<script>
+    function mostrarLogin() {
+      document.getElementById('login').style.display = 'block';
+      document.getElementById('registro').style.display = 'none';
+    }
+
+    function mostrarRegistro() {
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('registro').style.display = 'block';
+    }
+  </script>
+</head>
+<body onload="mostrarLogin()">
+  <div class="container">
+    <div class="toggle-buttons">
+      <button onclick="mostrarLogin()">Iniciar Sesión</button>
+      <button onclick="mostrarRegistro()">Registrarse</button>
+    </div>
+
+<hr>
+
+<div id="login">
+  <h2>Iniciar Sesión</h2>
+  <form action="login.php" method="POST">
+    <label for="login_usuario">Usuario:</label><br>
+    <input type="text" name="usuario" required><br><br>
+
+    <label for="login_contraseña">Contraseña:</label><br>
+    <input type="password" name="contrasena" required><br><br>
+
+    <button type="submit">Iniciar Sesión</button>
+  </form>
+</div>
+
+  <hr>
+
+  <div id="registro" style="display:none;">
+  <h2>Registro</h2>
+  <form action="regist.php" method="POST">
+    <label for="registro_usuario">Usuario:</label><br>
+    <input type="text" name="usuario" required><br><br>
+
+    <label for="registro_email">Correo Electrónico:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label for="registro_contrasena">Contraseña:</label><br>
+    <input type="password" name="contrasena" required><br><br>
+
+    <button type="submit">Registrarse</button>
+  </form>
+  </div>
+</div>
+
+</body>
+</html>

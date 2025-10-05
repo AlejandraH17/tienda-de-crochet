@@ -1,10 +1,21 @@
+<?php
+session_start();
+include 'conexion.php';
+
+$favicon = "imagenes/logoN.png"; // Ícono de respaldo
+
+$res = mysqli_query($conexion, "SELECT imagen FROM iconos WHERE nombre = 'favicon'");
+if ($fila = mysqli_fetch_assoc($res)) {
+    $favicon = "data:image/png;base64," . base64_encode($fila['imagen']);
+}
+?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Tiendita</title>
-    <link rel="icon" type="imagenes/logoN" href="/imagenes/logoN.png">
+    <link rel="icon" href="<?php echo $favicon; ?>">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
     body {
@@ -23,7 +34,7 @@
         margin-left: 20px;
         text-decoration: none;
         font-family: 'Trebuchet MS', sans-serif;
-        color: #f3dbffff; 
+        color: #ffe9d4ff; 
     }
     .logo img {
         height: 60px;
@@ -47,7 +58,7 @@
         top:-50px;
         left: 300px;
         padding: 20px;
-        background-color: #f3d0fdff;
+        background-color: #dfbc94ff;
         margin: 0 auto;
         max-width: 300px; 
     }
@@ -127,6 +138,8 @@
 
 </style>
 </head>
+
+
 <body>
     <header>
         <div class="logo">
@@ -135,10 +148,12 @@
         </div>
         <nav>
             <a href="#">Inicio</a>
-            <a href="#">Productos</a>
+            <a href="categoria.php">Productos</a>
             <a href="#">Tienda</a>
             <a href="#">Contacto</a>
+            <a href="index.html">Iniciar sesión</a>
         </nav>
+
     </header>
         <div class="productos">
            <?php

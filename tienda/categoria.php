@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+// Redirigir si no hay sesión activa
+if (!isset($_SESSION['user_id'])) {
+    header("Location: index.html");
+    exit();
+}
+
 include 'conexion.php'; // tu archivo de conexión
 $categoria = [
   'Trajes de Baño' => ['id' => 17, 'enlace' => 'categoria_tdb.php'],
@@ -18,7 +26,7 @@ $categoria = [
     body {
       margin: 0;
       font-family: 'Trebuchet MS', sans-serif;
-      background-color: #f6e3ffff;
+      background-color: #fffaf5;
     }
 
     .categorias {
@@ -93,10 +101,39 @@ $categoria = [
     .categoria:hover img {
       transform: scale(1.1);
     }
+    
+    .user-info {
+      background-color: #1e0829ff;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .user-info a {
+      color: white;
+      text-decoration: none;
+      background-color: #d32f2f;
+      padding: 5px 15px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .user-info a:hover {
+      background-color: #b71c1c;
+    }
  </style>
 </head>
+
+
 <body>
-    <section class="categorias">
+  <div class="user-info">
+    <span>Bienvenido a nuestra tienda, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
+    <a href="logout.php">Cerrar Sesión</a>
+  </div>
+
+  <section class="categorias">
     <h2>Selecciona la categoría de tu preferencia</h2>
     <div class="categorias2">
         <?php

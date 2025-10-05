@@ -1,6 +1,6 @@
 <?php
 include 'conexion.php'; // tu archivo de conexión
-$categorias = [
+$categoria = [
   'Trajes de Baño' => ['id' => 17, 'enlace' => 'categoria_tdb.php'],
   'Vestidos y Conjuntos' => ['id' => 3, 'enlace' => 'categoria_vestidos.php'],
   'Escarpines' => ['id' => 5, 'enlace' => 'categoria_escarpines.php'],
@@ -100,7 +100,7 @@ $categorias = [
     <h2>Selecciona la categoría de tu preferencia</h2>
     <div class="categorias2">
         <?php
-        foreach ($categorias as $nombre => $datos) {
+        foreach ($categoria as $nombre => $datos) {
         $id = $datos['id'];
         $enlace = $datos['enlace'];
 
@@ -119,5 +119,3 @@ $categorias = [
     </section>
 </body>
 </html>
-
-

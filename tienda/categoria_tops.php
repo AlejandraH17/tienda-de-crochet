@@ -9,7 +9,7 @@ $resultado = mysqli_query($conexion, $sql);
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Trajes de Baño</title>
+  <title>Tops y Suéteres</title>
   <style>
     body {
       margin: 0;

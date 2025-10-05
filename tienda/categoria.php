@@ -101,16 +101,23 @@ $categoria = [
       transform: scale(1.1);
     }
     
-    .user-info {
-      background-color: #1e0829ff;
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    
+    .menu {
+    background-color: #1e0829ff;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     }
 
-    .user-info a {
+    .menu nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+
+    .cerrar {
       color: white;
       text-decoration: none;
       background-color: #d32f2f;
@@ -119,7 +126,7 @@ $categoria = [
       transition: background-color 0.3s;
     }
 
-    .user-info a:hover {
+    .cerrar:hover {
       background-color: #b71c1c;
     }
  </style>
@@ -127,9 +134,15 @@ $categoria = [
 
 
 <body>
-  <div class="user-info">
+  <div class="menu">
     <span>Bienvenido a nuestra tienda, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
-    <a href="logout.php">Cerrar Sesión</a>
+    <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Productos</a>
+            <a href="#">Tienda</a>
+            <a href="#">Contacto</a>
+     </nav>
+    <a href="logout.php" class="cerrar">Cerrar Sesión</a>
   </div>
 
   <section class="categorias">

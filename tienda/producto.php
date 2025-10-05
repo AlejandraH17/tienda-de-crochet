@@ -2,7 +2,7 @@
 session_start();
 include 'conexion.php';
 
-$favicon = "imagenes/logoN.png"; // Ícono de respaldo
+$favicon = "imagenes/logoN.png";
 
 $res = mysqli_query($conexion, "SELECT imagen FROM iconos WHERE nombre = 'favicon'");
 if ($fila = mysqli_fetch_assoc($res)) {

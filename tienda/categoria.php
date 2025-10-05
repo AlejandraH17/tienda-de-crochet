@@ -1,13 +1,12 @@
 <?php
 session_start();
 
-// Redirigir si no hay sesión activa
 if (!isset($_SESSION['user_id'])) {
     header("Location: index.html");
     exit();
 }
 
-include 'conexion.php'; // tu archivo de conexión
+include 'conexion.php'; 
 $categoria = [
   'Trajes de Baño' => ['id' => 17, 'enlace' => 'categoria_tdb.php'],
   'Vestidos y Conjuntos' => ['id' => 3, 'enlace' => 'categoria_vestidos.php'],

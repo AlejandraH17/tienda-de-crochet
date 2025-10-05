@@ -17,11 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $user = $result->fetch_assoc();
             
             if (password_verify($contrasena, $user['contrasena'])) {
-                // Iniciar sesión
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['usuario'];
                 
-                // Redirigir a la página de categorías
                 header("Location: categoria.php");
                 exit();
             } else {

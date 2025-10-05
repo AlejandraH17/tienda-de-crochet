@@ -35,7 +35,7 @@
         align-items: flex-start;
     }
     .producto img {
-        width: 420px; 
+        width: 379px; 
         height: 500px;
         object-fit: cover;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -162,7 +162,7 @@
                     <div class="titulo2">
                     <h2>Prendas Únicas</h2>
                     <p>Descubre nuestra colección de trajes de baño, vestidos, tops, suéteres y más, confeccionados con hilos de alta calidad y diseños exclusivos.</p>
-                    <form action="categorias.php" method="get">
+                    <form action="categoria.php" method="get">
                     <button type="submit">VER PRODUCTOS</button>
                     </form>
                 </td>

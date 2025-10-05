@@ -1,7 +1,7 @@
 <?php
 include 'conexion.php';
 
-$sql = "SELECT nombre, imagen, precio FROM productos WHERE categoria = 'Trajes de Baño'";
+$sql = "SELECT nombre, imagen, precio FROM productos WHERE categoria = 'Tops y Suéteres'";
 $resultado = mysqli_query($conexion, $sql);
 ?>
 
@@ -65,7 +65,7 @@ $resultado = mysqli_query($conexion, $sql);
   </style>
 </head>
 <body>
-  <h2>Trajes de Baño</h2>
+  <h2>Tops y Suéteres</h2>
   <div class="productos">
     <?php
     if (mysqli_num_rows($resultado) > 0) {

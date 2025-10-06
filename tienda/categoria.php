@@ -136,18 +136,28 @@ $res = mysqli_query($conexion, "SELECT imagen FROM iconos WHERE nombre = 'favico
     .cerrar:hover {
       background-color: #b71c1c;
     }
+
+    .atras {
+      color: #1e0829ff;
+      text-decoration: none;
+      background-color: #f3dbffff;
+      padding: 5px 15px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
  </style>
 </head>
 
 
 <body>
   <div class="menu">
+    <a href="javascript:history.back()" class="atras">⟵ Atrás</a>
     <span>Bienvenido a nuestra tienda, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
     <nav>
             <a href="producto.php">Inicio</a>
             <a href="#">Productos</a>
-            <a href="#">Tienda</a>
-            <a href="#">Contacto</a>
+            <a href="tienda.php">Tienda</a>
+            <a href="contacto.php">Contacto</a>
      </nav>
     <a href="logout.php" class="cerrar">Cerrar Sesión</a>
   </div>

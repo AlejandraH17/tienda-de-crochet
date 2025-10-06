@@ -34,7 +34,7 @@ if ($fila = mysqli_fetch_assoc($res)) {
         margin-left: 20px;
         text-decoration: none;
         font-family: 'Trebuchet MS', sans-serif;
-        color: #ffe9d4ff; 
+        color: #ffffffff; 
     }
     .logo img {
         height: 60px;
@@ -149,8 +149,8 @@ if ($fila = mysqli_fetch_assoc($res)) {
         <nav>
             <a href="#">Inicio</a>
             <a href="categoria.php">Productos</a>
-            <a href="#">Tienda</a>
-            <a href="#">Contacto</a>
+            <a href="tienda.php">Tienda</a>
+            <a href="contacto.php">Contacto</a>
             <a href="index.html">Iniciar sesión</a>
         </nav>
 

@@ -6,7 +6,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-include 'conexion.php'; 
+include ('conexion.php'); 
 $categoria = [
   'Trajes de Baño' => ['id' => 17, 'enlace' => 'categoria_tdb.php'],
   'Vestidos y Conjuntos' => ['id' => 3, 'enlace' => 'categoria_vestidos.php'],
@@ -14,13 +14,20 @@ $categoria = [
   'Tops y Suéteres' => ['id' => 22, 'enlace' => 'categoria_tops.php'],
   'Sillas y algo más' => ['id' => 11, 'enlace' => 'categoria_sillas.php']
 ];
+
+$favicon = "imagenes/logoN.png";
+$res = mysqli_query($conexion, "SELECT imagen FROM iconos WHERE nombre = 'favicon'");
+  if ($fila = mysqli_fetch_assoc($res)) {
+      $favicon = "data:image/png;base64," . base64_encode($fila['imagen']);
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Productos</title>
-  <link rel="icon" type="imagenes/logoN" href="/imagenes/logoN.png">
+  <link rel="icon" href="<?php echo $favicon; ?>">
   <style>
     body {
       margin: 0;
@@ -137,7 +144,7 @@ $categoria = [
   <div class="menu">
     <span>Bienvenido a nuestra tienda, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
     <nav>
-            <a href="#">Inicio</a>
+            <a href="producto.php">Inicio</a>
             <a href="#">Productos</a>
             <a href="#">Tienda</a>
             <a href="#">Contacto</a>
